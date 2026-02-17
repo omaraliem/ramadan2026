@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>يومي في رمضان 1447هـ - 2026م</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --teal-dark:   #1a7a7a;
+    --teal-mid:    #2a9d9d;
+    --teal-light:  #e6f4f4;
+    --teal-header: #2aadad;
+    --green-dark:  #2e7d4f;
+    --green-mid:   #4caf80;
+    --green-light: #e8f5ee;
+    --green-head:  #3aae6e;
+    --orange-dark: #c96a1a;
+    --orange-mid:  #e8933a;
+    --orange-light:#fdf0e0;
+    --orange-head: #e8933a;
+    --pink-dark:   #c0304a;
+    --pink-mid:    #e85070;
+    --pink-light:  #fde8ec;
+    --pink-head:   #e05070;
+    --gold:        #d4a017;
+    --row-alt:     #f0fafa;
+    --row-white:   #ffffff;
+    --border:      #c8e8e8;
+    --text-dark:   #1a2e2e;
+    --text-mid:    #2a4a4a;
+    --highlight1:  #b2dfdb44;
+    --highlight2:  #c8e6c944;
+    --shadow:      0 4px 24px rgba(26,122,122,0.13);
+  }
+
+  body {
+    font-family: 'Cairo', 'Amiri', sans-serif;
+    background: linear-gradient(135deg, #d0eeee 0%, #e8f8f5 40%, #f0faf4 100%);
+    min-height: 100vh;
+    padding: 18px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .wrapper {
+    max-width: 1200px;
+    width: 100%;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: var(--shadow), 0 1px 0 #b2dfdb;
+    overflow: hidden;
+    border: 2px solid var(--teal-mid);
+  }
+
+  /* ── TITLE ── */
+  .title-bar {
+    background: linear-gradient(90deg, var(--teal-dark) 0%, var(--teal-mid) 50%, var(--teal-dark) 100%);
+    color: #fff;
+    text-align: center;
+    padding: 14px 20px 10px;
+    position: relative;
+  }
+  .title-bar::before, .title-bar::after {
+    content: '✦';
+    position: absolute;
+    top: 50%; transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: #aaf0e0;
+    opacity: .7;
+  }
+  .title-bar::before { left: 22px; }
+  .title-bar::after  { right: 22px; }
+  .title-bar h1 {
+    font-size: clamp(1.2rem, 3.5vw, 2rem);
+    font-weight: 900;
+    letter-spacing: .04em;
+  }
+  .title-bar h1 span { color: #a8f0d8; }
+
+  /* ── TABLE ── */
+  .scroll-wrap { overflow-x: auto; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: clamp(0.55rem, 1.1vw, 0.78rem);
+    table-layout: fixed;
+  }
+
+  /* Column widths */
+  col.c-day      { width: 68px; }
+  col.c-fajr,
+  col.c-dhuhr,
+  col.c-asr,
+  col.c-maghrib,
+  col.c-isha     { width: 36px; }
+  col.c-sunna    { width: 44px; }
+  col.c-duha     { width: 36px; }
+  col.c-qiyam    { width: 50px; }
+  col.c-sabah    { width: 36px; }
+  col.c-masa     { width: 36px; }
+  col.c-istigh   { width: 36px; }
+  col.c-nabi     { width: 36px; }
+  col.c-amma     { width: 56px; }
+  col.c-tilaw    { width: 110px; }
+  col.c-tadab    { width: 110px; }
+  col.c-sadaqa   { width: 36px; }
+  col.c-walid    { width: 42px; }
+  col.c-sila     { width: 36px; }
+  col.c-idkhal   { width: 42px; }
+  col.c-itaam    { width: 36px; }
+
+  th, td {
+    border: 1px solid var(--border);
+    text-align: center;
+    vertical-align: middle;
+    padding: 3px 2px;
+    line-height: 1.25;
+  }
+
+  /* ── HEADER ROW 1 – section titles ── */
+  .hrow1 th {
+    font-weight: 800;
+    font-size: clamp(0.7rem, 1.5vw, 1rem);
+    padding: 8px 4px 6px;
+    color: #fff;
+    border-bottom: 2px solid rgba(255,255,255,.35);
+  }
+  .hrow1 .th-day   { background: var(--teal-dark); }
+  .hrow1 .th-salah { background: var(--green-head); }
+  .hrow1 .th-adhkar{ background: var(--pink-head); }
+  .hrow1 .th-quran { background: var(--orange-head); }
+  .hrow1 .th-amal  { background: var(--teal-header); }
+
+  /* ── HEADER ROW 2 – sub-sections ── */
+  .hrow2 th {
+    font-weight: 700;
+    font-size: clamp(0.58rem, 1.1vw, 0.78rem);
+    padding: 5px 3px;
+    color: #fff;
+  }
+  .hrow2 .th-fard  { background: #3db87a; }
+  .hrow2 .th-nawaf { background: #2ea060; }
+  .hrow2 .th-adhsub{ background: #d04060; }
+  .hrow2 .th-qrsub { background: var(--orange-dark); }
+  .hrow2 .th-amalsub{ background: var(--teal-mid); }
+  .hrow2 .th-day2  { background: var(--teal-dark); }
+
+  /* ── HEADER ROW 3 – column labels ── */
+  .hrow3 th {
+    font-weight: 700;
+    font-size: clamp(0.52rem, 0.95vw, 0.72rem);
+    padding: 4px 2px;
+    color: #fff;
+    writing-mode: horizontal-tb;
+  }
+  .hrow3 .th-fard3  { background: #5fcc95; color: #0d3d28; }
+  .hrow3 .th-nawaf3 { background: #3ab875; }
+  .hrow3 .th-adh3   { background: #e07080; }
+  .hrow3 .th-qr3    { background: #e8a050; color: #3a1a00; }
+  .hrow3 .th-amal3  { background: #40c0c0; color: #003535; }
+  .hrow3 .th-day3   { background: var(--teal-dark); }
+
+  /* ── DATA ROWS ── */
+  .data-row td { height: 58px; }
+  .data-row:nth-child(odd)  { background: var(--row-white); }
+  .data-row:nth-child(even) { background: var(--row-alt); }
+
+  /* Ten-day highlight rows (rows 10, 20, 30 = indices divisible by 10) */
+  .data-row.highlight {
+    background: linear-gradient(90deg, #c8f0e8 0%, #d8f4e8 50%, #c8f0e8 100%) !important;
+  }
+
+  /* Day label cell */
+  .td-day {
+    font-weight: 700;
+    font-size: clamp(0.6rem, 1.1vw, 0.78rem);
+    color: #fff;
+    padding: 3px 6px;
+  }
+  .day-normal  { background: var(--teal-dark); }
+  .day-ten     { background: #c0354a; }
+
+  /* Checkbox circles */
+  .cb {
+    display: inline-block;
+    width: 16px; height: 16px;
+    border-radius: 50%;
+    border: 1.5px solid;
+    cursor: pointer;
+    transition: background .15s, transform .12s;
+    user-select: none;
+    flex-shrink: 0;
+  }
+  .cb:hover { transform: scale(1.18); }
+  .cb.checked { background: currentColor; }
+
+  /* Color per section */
+  .cb-fard   { border-color: #2ea060; color: #2ea060; }
+  .cb-nawaf  { border-color: #1a8040; color: #1a8040; }
+  .cb-adh    { border-color: #c03050; color: #c03050; }
+  .cb-qr     { border-color: #c07020; color: #c07020; }
+  .cb-amal   { border-color: #1a9090; color: #1a9090; }
+
+  /* Quran input fields */
+  .qr-input {
+    width: 100%;
+    height: 52px;
+    border: 1.5px solid #e8a050;
+    border-radius: 4px;
+    background: #fff8f0;
+    font-family: 'Cairo', sans-serif;
+    font-size: clamp(0.5rem, 0.9vw, 0.7rem);
+    color: #3a1a00;
+    resize: none;
+    padding: 3px 4px;
+    line-height: 1.4;
+    outline: none;
+    transition: border-color .15s, box-shadow .15s;
+    direction: rtl;
+    overflow-y: auto;
+  }
+  .qr-input:focus {
+    border-color: #c07020;
+    box-shadow: 0 0 0 2px rgba(200,112,32,.18);
+    background: #fffaf4;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: var(--teal-dark);
+    color: #c8f0e8;
+    font-size: clamp(0.6rem, 1.2vw, 0.78rem);
+    padding: 8px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .footer .brand { font-weight: 800; color: #a8fce0; }
+  .footer .dua   { font-style: italic; opacity: .9; }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- TITLE -->
+  <div class="title-bar">
+    <h1>يومي في <span>رمضان</span> ( 1447 هـ – 2026 م )</h1>
+  </div>
+
+  <div class="scroll-wrap">
+  <table>
+    <colgroup>
+      <col class="c-day">
+      <!-- Fard prayers -->
+      <col class="c-fajr"><col class="c-dhuhr"><col class="c-asr"><col class="c-maghrib"><col class="c-isha">
+      <!-- Nawafil -->
+      <col class="c-sunna"><col class="c-duha"><col class="c-qiyam">
+      <!-- Adhkar -->
+      <col class="c-sabah"><col class="c-masa"><col class="c-istigh"><col class="c-nabi"><col class="c-amma">
+      <!-- Quran -->
+      <col class="c-tilaw"><col class="c-tadab">
+      <!-- Amal -->
+      <col class="c-sadaqa"><col class="c-walid"><col class="c-sila"><col class="c-idkhal"><col class="c-itaam">
+    </colgroup>
+
+    <thead>
+      <!-- ROW 1: Main section headers -->
+      <tr class="hrow1">
+        <th class="th-day" rowspan="3">اليوم</th>
+        <th class="th-salah" colspan="8">الصـــلاة</th>
+        <th class="th-adhkar" colspan="5">الأذكـار</th>
+        <th class="th-quran" colspan="2">قرآن</th>
+        <th class="th-amal" colspan="5">أعمال صالحة</th>
+      </tr>
+
+      <!-- ROW 2: Sub-section headers -->
+      <tr class="hrow2">
+        <th class="th-fard" colspan="5">الفروض ( على وقتها )</th>
+        <th class="th-nawaf" colspan="3">النوافل</th>
+        <th class="th-adhsub" colspan="5"></th>
+        <th class="th-qrsub" colspan="2"></th>
+        <th class="th-amalsub" colspan="5"></th>
+      </tr>
+
+      <!-- ROW 3: Column labels -->
+      <tr class="hrow3">
+        <!-- Fard -->
+        <th class="th-fard3">فجر</th>
+        <th class="th-fard3">ظهر</th>
+        <th class="th-fard3">عصر</th>
+        <th class="th-fard3">مغرب</th>
+        <th class="th-fard3">عشاء</th>
+        <!-- Nawafil -->
+        <th class="th-nawaf3">السنن الرواتب<br>(12 ركعة)</th>
+        <th class="th-nawaf3">الضحى</th>
+        <th class="th-nawaf3">قيام الليل<br>(تراويح-تهجد)</th>
+        <!-- Adhkar -->
+        <th class="th-adh3">الصباح</th>
+        <th class="th-adh3">المساء</th>
+        <th class="th-adh3">الاستغفار</th>
+        <th class="th-adh3">الصلاة على النبي ﷺ</th>
+        <th class="th-adh3">أذكار عامة<br>(تسبيح-تكبير<br>حمد-تهليل)<br>ودعاء</th>
+        <!-- Quran -->
+        <th class="th-qr3">ورد تلاوة</th>
+        <th class="th-qr3">ورد تدبر</th>
+        <!-- Amal -->
+        <th class="th-amal3">صدقة</th>
+        <th class="th-amal3">بر الوالدين</th>
+        <th class="th-amal3">صلة رحم</th>
+        <th class="th-amal3">إدخال سرور</th>
+        <th class="th-amal3">إطعام</th>
+      </tr>
+    </thead>
+
+    <tbody id="tableBody">
+      <!-- Generated by JS -->
+    </tbody>
+  </table>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span class="brand">Minbary | منبري  𝕏 🔵 📘</span>
+    <span class="dua">لا تنسوا الدعاء لأهلنا في فلسطين وسوريا والسودان</span>
+  </div>
+</div>
+
+<script>
+  const DAYS = 30;
+  const STORAGE_KEY = 'ramadan_tracker_1445';
+  const TEN_DAY = new Set([10, 20, 30]);
+  const arabicNumerals = n => n.toString().replace(/\d/g, d => '٠١٢٣٤٥٦٧٨٩'[d]);
+
+  // Load saved state (a flat object: { "cb-d1-c3": true, ... })
+  function loadState() {
+    try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; }
+    catch { return {}; }
+  }
+
+  // Save full state back to localStorage
+  function saveState(state) {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
+    catch (e) { console.warn('localStorage unavailable:', e); }
+  }
+
+  const state = loadState();
+  const tbody = document.getElementById('tableBody');
+
+  // Column definitions: [cssClass, count]
+  const COLS = [
+    ['cb-fard',  5],
+    ['cb-nawaf', 3],
+    ['cb-adh',   5],
+  ];
+
+  for (let d = 1; d <= DAYS; d++) {
+    const isTen = TEN_DAY.has(d);
+    const tr = document.createElement('tr');
+    tr.className = 'data-row' + (isTen ? ' highlight' : '');
+
+    // Day label
+    const tdDay = document.createElement('td');
+    tdDay.className = 'td-day ' + (isTen ? 'day-ten' : 'day-normal');
+    tdDay.textContent = arabicNumerals(d) + ' رمضان';
+    tr.appendChild(tdDay);
+
+    let colIdx = 0;
+
+    // Helper: create a checkbox cell with a unique key
+    function cbCell(cls) {
+      const key = `d${d}-c${colIdx++}`;
+      const td = document.createElement('td');
+      const cb = document.createElement('span');
+      cb.className = 'cb ' + cls;
+      cb.dataset.key = key;
+      cb.title = 'اضغط للتحديد';
+      if (state[key]) cb.classList.add('checked');
+      cb.addEventListener('click', function () {
+        this.classList.toggle('checked');
+        state[key] = this.classList.contains('checked');
+        saveState(state);
+      });
+      td.appendChild(cb);
+      return td;
+    }
+
+    // Helper: Quran textarea cell with localStorage saving
+    function qrCell() {
+      const key = `d${d}-c${colIdx++}`;
+      const td = document.createElement('td');
+      td.style.padding = '3px';
+      const ta = document.createElement('textarea');
+      ta.className = 'qr-input';
+      ta.placeholder = '...';
+      ta.value = state[key] || '';
+      ta.addEventListener('input', function () {
+        state[key] = this.value;
+        saveState(state);
+      });
+      td.appendChild(ta);
+      return td;
+    }
+
+    // 5 Fard prayers
+    for (let i = 0; i < 5; i++) tr.appendChild(cbCell('cb-fard'));
+    // 3 Nawafil
+    for (let i = 0; i < 3; i++) tr.appendChild(cbCell('cb-nawaf'));
+    // 5 Adhkar
+    for (let i = 0; i < 5; i++) tr.appendChild(cbCell('cb-adh'));
+    // 2 Quran columns (decorative lines)
+    tr.appendChild(qrCell());
+    tr.appendChild(qrCell());
+    // 5 Good deeds
+    for (let i = 0; i < 5; i++) tr.appendChild(cbCell('cb-amal'));
+
+    tbody.appendChild(tr);
+  }
+
+  // ── Optional: reset button logic (if you add one to the page) ──
+  // document.getElementById('resetBtn').addEventListener('click', () => {
+  //   if (confirm('هل تريد مسح كل التقدم؟')) {
+  //     localStorage.removeItem(STORAGE_KEY);
+  //     location.reload();
+  //   }
+  // });
+</script>
+</body>
+</html>
